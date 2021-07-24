@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+<head>
+    <title>
+        Logout page
+    </title>
+    <style media="screen">
+    body{
+        background-color: lightblue;
+    }
+    button:hover{
+        background-color: white;
+        color:grey;
+    }
+    button{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top: 40%;
+        right : 45%;
+
+    }
+    h1{
+        text-align: center;
+        width:100%;
+        line-height:100px;
+        color: #000033;
+    }
+    h3{
+        text-align: center;
+        width:100%;
+        line-height:100px;
+    }
+    </style>
+</head>
+<body>
+    <h1>YOUR ARE SUCCESSFULLY LOGED OUT</h1>
+    <h3>Click on the below button to get back to the Login Page</h3>
+        {% csrf_token %}
+    <a href="http://127.0.0.1:8000/accounts/login/?next=/"><button type="button" name="button">Login Page</button></a><br/><br/>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{%load static%}
+<html>
+    <head>
+        <title>FEE REPORT</title>
+    </head>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th,td{
+        padding: 10px;
+    }
+    th{
+        background-color:#B3BFB6;
+    }
+    td{
+        background-color:lightblue;
+    }
+    button:hover{
+        background-color: white;
+        color:grey;
+    }
+    button{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top: 14%;
+    }
+</style>
+    <body>
+        <br>
+        <h1 style="text-align:center;color:#000033;">STUDENT FEE REPORT</h1><br/><br/>
+        <table class="center" border="2">
+            <tr style="text-align:center";>
+                <th>STUDENT NAME</th>
+                <th>CLASS NAME</th>
+                <th>FEES</th>
+                <th>STATUS</th>
+            </tr>
+            {% for s in allstudents %}
+            <tr style="text-align:center";>
+                <td>{{s.name}}</td>
+                <td>{{s.classname}}</td>
+                <td>{{s.feesamount}}</td>
+                <td>{{s.status}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            <br>
+            <br>
+                <a href="http://127.0.0.1:8000/accounts/login/?next=/"><button  type="button" name="button">BACK</button></a><br/><br/>
+    </body>
+</html>

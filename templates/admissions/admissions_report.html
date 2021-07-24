@@ -1,0 +1,70 @@
+{%load static%}
+<html>
+    <head>
+        <title>ADMISSIONS REPORT</title>
+    </head>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th,td{
+        padding: 10px;
+    }
+    th{
+        background-color:#B3BFB6;
+    }
+    td{
+        background-color: lightblue;
+    }
+    .b1{
+        background-color: #B3BFB6;
+    }
+    .b2{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top:14%;
+    }
+</style>
+    <body>
+        <br>
+        <h1 style="text-align:center";>ADMITTED STUDENT DETAILS</h1><br/><br/>
+        <table class="center" border="2">
+            <tr style="text-align:center";>
+                <th>ADMISSION NO</th>
+                <th>STUDENT NAME</th>
+                <th>GENDER</th>
+                <th>FATHER NAME</th>
+                <th>MOTHER NAME</th>
+                <th>CLASS NAME</th>
+                <th>COTACT NUMBER</th>
+                <th>ACTIONS</th>
+            </tr>
+            {% for s in allstudents %}
+            <tr style="text-align:center";>
+                <td>{{s.admno}}</td>
+                <td>{{s.name}}</td>
+                <td>{{s.gender}}</td>
+                <td>{{s.fathername}}</td>
+                <td>{{s.mothername}}</td>
+                <td>{{s.classname}}</td>
+                <td>{{s.contact}}</td>
+                <div class="one">
+                    <td>
+                        <a href="/ad/upd/{{s.id}}"><button class="b1" type="button" name="button">UPDATE</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/ad/del/{{s.id}}"><button class="b1" type="button" name="button">DELETE</button></a>
+                    </td>
+                </div>
+            </tr>
+            {% endfor %}
+            </table>
+            <br>
+            <br><br>
+            <a href="http://127.0.0.1:8000/"><button class="b2" type="button" name="button">BACK</button></a><br/><br/>
+    </body>
+</html>

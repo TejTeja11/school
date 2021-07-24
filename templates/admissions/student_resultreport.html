@@ -1,0 +1,66 @@
+{%load static%}
+<html>
+    <head>
+        <title>STUDENT RESULT REPORT</title>
+    </head>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th,td{
+        padding: 10px;
+    }
+    th{
+        background-color:#B3BFB6;
+    }
+    td{
+        background-color: lightblue;
+    }
+    .b1{
+        background-color: #B3BFB6;
+    }
+    .b2{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top:14%;
+    }
+</style>
+    <body>
+        <br>
+        <h1 style="text-align:center";>STUDENT RESULT REPORT</h1><br/><br/>
+        <table class="center" border="2">
+            <tr style="text-align:center";>
+                <th>STUDENT NAME</th>
+                <th>CLASS NAME</th>
+                <th>LANGUAGE MARKS</th>
+                <th>MATHS MARKS</th>
+                <th>SCIENCE MARKS</th>
+                <th>TOTAL MARKS</th>
+                <th>ACTIONS</th>
+            </tr>
+            {% for s in allstudents %}
+            <tr style="text-align:center";>
+                <td>{{s.name}}</td>
+                <td>{{s.classname}}</td>
+                <td>{{s.language_marks}}</td>
+                <td>{{s.maths_marks}}</td>
+                <td>{{s.science_marks}}</td>
+                <td>{{s.total_marks}}</td>
+                <div class="one">
+                    <td>
+                        <a href="/ad/str/{{s.id}}"><button class="b1" type="button" name="button">UPDATE</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                </div>
+            </tr>
+            {% endfor %}
+            </table>
+            <br>
+            <a href="http://127.0.0.1:8000/"><button class="b2" type="button" name="button">BACK</button></a><br/><br/>
+    </body>
+</html>

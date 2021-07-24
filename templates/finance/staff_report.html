@@ -1,0 +1,70 @@
+{%load static%}
+<html>
+    <head>
+        <title>STAFF REPORT</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+            table.center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            th,td{
+                padding: 10px;
+            }
+            th{
+                background-color:#B3BFB6;
+            }
+            td{
+                background-color: lightblue;
+            }
+            .b1{
+                background-color: #B3BFB6;
+            }
+            .b2{
+                width:150px;
+                background-color: grey;
+                color:white;
+                position: absolute;
+                top:14%;
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        <h1 style="text-align:center";>STAFF DETAILS REPORT</h1><br/><br/>
+        <table class="center" border="2">
+            <tr style="text-align:center";>
+                <th>TEACHER ID</th>
+                <th>FACULTY NAME</th>
+                <th>GENDER</th>
+                <th>EXPERIENCE</th>
+                <th>DEPARTMENT</th>
+                <th>CONTACT</th>
+                <th>GMAIL ID</th>
+                <th>ACTIONS</th>
+            </tr>
+            {% for s in allstudents %}
+            <tr style="text-align:center";>
+                <td>{{s.empid}}</td>
+                <td>{{s.name}}</td>
+                <td>{{s.gender}}</td>
+                <td>{{s.exp}}</td>
+                <td>{{s.department}}</td>
+                <td>{{s.contact}}</td>
+                <td>{{s.gmail}}</td>
+                <div class="one">
+                    <td>
+                        <a href="/fin/updst/{{s.id}}"><button class="b1" type="button" name="button">UPDATE</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/fin/delst/{{s.id}}"><button class="b1" type="button" name="button">DELETE</button></a>
+                    </td>
+                </div>
+            </tr>
+            {% endfor %}
+            </table>
+            <br>
+            <br>
+            <a href="http://127.0.0.1:8000/"><button class="b2" type="button" name="button">BACK</button></a><br/><br/>
+    </body>
+</html>

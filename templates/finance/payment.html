@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+<head>
+    <title>
+        SCHOOL FEE PAYMENT
+    </title>
+    <style>
+    button:hover{
+        background-color: white;
+        color:grey;
+    }
+    button{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top: 85%;
+        right : 45%;
+
+    }
+    .btn{
+        text-align: center;
+    }
+    body{
+        background-color: lightblue;
+    }
+</style>
+
+</head>
+<body>
+    <center><h1 style="color: #000033">Welcome to Payment page</h1></center>
+	<center><img src="{% static "images/payment1.jpeg" %}" alt="Hi!" /></center>
+	<center><h3>After paying fee please send the bellow details to 9908258956 through sms</h3></center>
+	<center><h3>Status of your Fee Details wiil be Modified within 24 working hours</h3>
+	<center><h2>1.Trasaction-id</h2></center>
+	<center><h2>2.Student Name</h2></center>
+	<center><h2>3.Father Name</h2></center>
+	<center><h2 >4.date of payment</h2></center>
+	<center><h2 >5.Mode of payment</h2></center>
+    <br>
+    <br>
+    <div class="btn">
+        <a href="http://127.0.0.1:8000/accounts/login/?next=/"><button  type="button" name="button">BACK</button></a><br/><br/>
+    </div>
+</body>
+</html>

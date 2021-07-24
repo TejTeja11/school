@@ -1,0 +1,70 @@
+{%load static%}
+<html>
+    <head>
+        <title>FEE COLLECTION REPORTt</title>
+    </head>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th,td{
+        padding: 10px;
+    }
+    th{
+        background-color:#B3BFB6;
+    }
+    td{
+        background-color: lightblue;
+    }
+    .b1{
+        background-color: #B3BFB6;
+    }
+    .b2{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top:14%;
+    }
+</style>
+    <body>
+        <br>
+        <h1 style="text-align:center";>FEE COLLECTION REPORT</h1><br/><br/>
+        <table class="center"border="2">
+            <tr style="text-align:center";>
+                <th>NAME</th>
+                <th>classname</th>
+                <th>BOOKS FEES</th>
+                <th>BOOKS FEES STATUS</th>
+                <th>SCHOOL FEES</th>
+                <th>SCHOOL FEES STATUS</th>
+                <th>BUS FEES</th>
+                <th>BUS FEES STATUS</th>
+                <th>ACTIONS</th>
+            </tr>
+            {% for s in allstudents %}
+            <tr style="text-align:center";>
+                <td>{{s.name}}</td>
+                <td>{{s.classname}}</td>
+                <td>{{s.books_fees}}</td>
+                <td>{{s.bookfees_status}}</td>
+                <td>{{s.school_fees}}</td>
+                <td>{{s.schoolfees_status}}</td>
+                <td>{{s.bus_fees}}</td>
+                <td>{{s.busfees_status}}</td>
+                <div class="one">
+                    <td>
+                        <a href="/ad/updfee/{{s.id}}"><button class="b1" type="button" name="button">UPDATE</button>
+                    </td>
+                </div>
+            </tr>
+            {% endfor %}
+            </table>
+            <br>
+            <a href="http://127.0.0.1:8000/"><button class="b2" type="button" name="button">BACK</button></a><br/><br/>
+    </body>
+</html>

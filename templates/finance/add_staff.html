@@ -1,0 +1,73 @@
+{% load static %}
+<html>
+<head>
+    <title>
+        add Staff page
+    </title>
+    <style>
+    button:hover{
+        background-color: white;
+        color:grey;
+    }
+    button{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top: 57%;
+        right : 25%;
+
+    }
+    h1{
+        text-align: center;
+        color: #000033;
+    }
+    h3{
+        text-align: center;
+    }
+    .btn{
+        text-align: center;
+    }
+    div.form{
+        display: block;
+        text-align: center;
+    }
+    form{
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+    input[type=submit] {
+        width:150px;
+        background-color: grey;
+        color:white;
+        left: 25%;
+    }
+    body{
+        background-color: lightblue;
+    }
+</style>
+</head>
+<body>
+    <h1>ADD STAFF PAGE</h1>
+    <h3>please fill bellow form</h3>
+    <br>
+    <br>
+    <div class="form">
+        <form method="POST">
+            <table>
+                {{form.as_table}}
+            </table>
+            <br/>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="ADD STAFF">
+            {% csrf_token %}
+        </form>
+    </div>
+    <a href="http://127.0.0.1:8000/"><button type="button" name="button">BACK</button></a><br/><br/>
+</body>
+</html>

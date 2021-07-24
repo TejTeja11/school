@@ -1,0 +1,63 @@
+{%load static%}
+<html>
+    <head>
+        <title>RESULT REPORT</title>
+    </head>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th,td{
+        padding: 10px;
+    }
+    th{
+        background-color:#B3BFB6;
+    }
+    td{
+        background-color:lightblue;
+    }
+    button:hover{
+        background-color: white;
+        color:grey;
+    }
+    button{
+        width:150px;
+        background-color: grey;
+        color:white;
+        position: absolute;
+        top: 14%;
+    }
+</style>
+    <body>
+        <br>
+        <h1 style="text-align:center";>STUDENT RESULTS</h1><br/><br/>
+        <table class="center" border="2">
+            <tr style="text-align:center";>
+                <th>STUDENT NAME</th>
+                <th>CLASS NAME</th>
+                <th>LANGUAGE MARKS</th>
+                <th>MATHS MARKS</th>
+                <th>SCIENCE MARKS</th>
+                <th>TOTAL MARKS</th>
+            </tr>
+            {% for s in allstudents %}
+            <tr style="text-align:center";>
+                <td>{{s.name}}</td>
+                <td>{{s.classname}}</td>
+                <td>{{s.language_marks}}</td>
+                <td>{{s.maths_marks}}</td>
+                <td>{{s.science_marks}}</td>
+                <td>{{s.total_marks}}</td>
+
+            </tr>
+            {% endfor %}
+            </table>
+            <br>
+            <br>
+                <a href="http://127.0.0.1:8000/accounts/login/?next=/"><button  type="button" name="button">BACK</button></a><br/><br/>
+    </body>
+</html>
